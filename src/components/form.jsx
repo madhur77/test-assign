@@ -1,6 +1,11 @@
 import { useState } from "react";
 import React from 'react';
-
+import {
+    StyledForm,
+    StyledLabel,
+    StyledInput,
+    StyledButton,
+  } from './styleform';
 const Form = () => {
   const [formstate, setFormState] = useState({ app_name: "", volume: "" });
 
@@ -17,25 +22,27 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} data-testid="form">
-      <label>App name</label>
-      <input
+    <StyledForm onSubmit={handleSubmit} data-testid="form">
+      <StyledLabel htmlFor="app-name">App name</StyledLabel>
+      <StyledInput
         type="text"
         onChange={handleAppName}
         id="app-name"
         aria-label="app-name"
+        aria-required="true"
         required
-      ></input>
-      <label>Volume</label>
-      <input
+      ></StyledInput>
+      <StyledLabel htmlFor="volume">Volume</StyledLabel>
+      <StyledInput
         type="number"
         onChange={handleVolumeName}
         id="volume"
         aria-label="volume"
+        aria-required="true"
         required
-      ></input>
-      <button type="submit">Submit</button>
-    </form>
+      ></StyledInput>
+      <StyledButton type="submit">Submit</StyledButton>
+    </StyledForm>
   );
 };
 
