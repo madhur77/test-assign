@@ -20,7 +20,7 @@ const VTable = () => {
     }));
   };
 
-  const count = 100;
+  const count = 10000;
   const rows = getRows(count);
   const [_rows, setRows] = useState(rows);
   const [_sortDirection, setDir] = useState({
@@ -44,7 +44,7 @@ const VTable = () => {
     }
 
     .ReactVirtualized__Table__row {
-      background: black;
+      background: whites;
       border-right: 1px solid gray;
       border-left: 1px solid gray;
       border-bottom: 1px solid gray;
@@ -125,6 +125,7 @@ const VTable = () => {
                     placeholder="Enter some number"
                     onChange={handleSearchBox}
                     value={searchval}
+                    
                   />
                   <Table
                     {...props}
